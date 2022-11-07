@@ -1,6 +1,6 @@
 # Changelog
 
-<!-- changelog: start -->
+<!-- changelogging: start -->
 
 ## 1.1.0 (2022-11-07)
 
