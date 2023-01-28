@@ -563,7 +563,7 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">15</span>
 <span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@runtime_checkable</span>
 <span class="k">class</span> <span class="nc">Named</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The named protocol for types that contain the `__name__` attribute.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The named protocol for types that contain the `__name__` attribute.&quot;&quot;&quot;</span>
     <span class="vm">__name__</span><span class="p">:</span> <span class="nb">str</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -657,7 +657,7 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Named</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Fetches the `__name__` of the [`Named`][named.typing.Named] `item`.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetches the `__name__` of the [`Named`][named.typing.Named] `item`.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        item: The item to fetch the name of.</span>
@@ -740,7 +740,7 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_type_name</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Fetches the `__name__` of the `item` type.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetches the `__name__` of the `item` type.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        item: The item to fetch the type name of.</span>
@@ -823,7 +823,7 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">50</span>
 <span class="normal">51</span>
 <span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_named</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TypeGuard</span><span class="p">[</span><span class="n">Named</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Checks if the `item` implements the [`Named`][named.typing.Named] protocol.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if the `item` implements the [`Named`][named.typing.Named] protocol.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        item: The item to check.</span>
