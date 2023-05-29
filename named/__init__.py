@@ -23,9 +23,9 @@ __url__ = "https://github.com/nekitdev/named"
 __title__ = "named"
 __author__ = "nekitdev"
 __license__ = "MIT"
-__version__ = "1.2.0"
+__version__ = "1.3.0"
 
-from named.typing import (
+from named.core import (
     MODULE,
     NAME,
     Moduled,
@@ -38,6 +38,10 @@ from named.typing import (
     has_name,
     is_moduled,
     is_named,
+    set_module,
+    set_name,
+    set_type_module,
+    set_type_name,
 )
 
 __all__ = (
@@ -48,6 +52,8 @@ __all__ = (
     "get_type_name",
     "has_name",
     "is_named",
+    "set_name",
+    "set_type_name",
     # moduled
     "MODULE",
     "Moduled",
@@ -55,4 +61,6 @@ __all__ = (
     "get_type_module",
     "has_module",
     "is_moduled",
+    "set_module",
+    "set_type_module",
 )

@@ -2,6 +2,16 @@
 
 <!-- changelogging: start -->
 
+## 1.3.0 (2023-05-29)
+
+### Features
+
+- Added `set_name`, `set_type_name`, `set_module` and `set_type_module`.
+
+### Internal
+
+- Renamed `named.typing` to `named.core`.
+
 ## 1.2.0 (2023-05-24)
 
 ### Features

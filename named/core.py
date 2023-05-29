@@ -11,6 +11,8 @@ __all__ = (
     "get_type_name",
     "has_name",
     "is_named",
+    "set_name",
+    "set_type_name",
     # moduled
     "MODULE",
     "Moduled",
@@ -18,6 +20,8 @@ __all__ = (
     "get_type_module",
     "has_module",
     "is_moduled",
+    "set_module",
+    "set_type_module",
 )
 
 
@@ -44,6 +48,16 @@ def get_name(item: Named) -> str:
     return item.__name__
 
 
+def set_name(item: Named, name: str) -> None:
+    """Sets the `__name__` of the [`Named`][named.typing.Named] `item`.
+
+    Arguments:
+        item: The item to set the name of.
+        name: The name to set on the item.
+    """
+    item.__name__ = name
+
+
 def get_type_name(item: Any) -> str:
     """Fetches the `__name__` of the `item` type.
 
@@ -54,6 +68,16 @@ def get_type_name(item: Any) -> str:
         The name of the item type.
     """
     return get_name(type(item))  # type: ignore
+
+
+def set_type_name(item: Any, name: str) -> None:
+    """Sets the `__name__` of the `item` type.
+
+    Arguments:
+        item: The item to set the type name of.
+        name: The name to set on the item type.
+    """
+    set_name(type(item), name)  # type: ignore
 
 
 def is_named(item: Any) -> TypeGuard[Named]:
@@ -95,6 +119,16 @@ def get_module(item: Moduled) -> str:
     return item.__module__
 
 
+def set_module(item: Moduled, module: str) -> None:
+    """Sets the `__module__` of the [`Moduled`][named.typing.Moduled] `item`.
+
+    Arguments:
+        item: The item to set the module of.
+        module: The module to set on the item.
+    """
+    item.__module__ = module
+
+
 def get_type_module(item: Any) -> str:
     """Fetches the `__module__` of the `item` type.
 
@@ -105,6 +139,16 @@ def get_type_module(item: Any) -> str:
         The module of the item type.
     """
     return get_module(type(item))  # type: ignore
+
+
+def set_type_module(item: Any, module: str) -> None:
+    """Sets the `__module__` of the `item` type.
+
+    Arguments:
+        item: The item to set the type module of.
+        module: The module to set on the item type.
+    """
+    set_module(type(item), module)  # type: ignore
 
 
 def is_moduled(item: Any) -> TypeGuard[Moduled]:
