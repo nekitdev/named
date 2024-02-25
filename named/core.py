@@ -1,7 +1,7 @@
 from builtins import hasattr as has_attribute
-from typing import Any
+from typing import Any, Protocol, runtime_checkable
 
-from typing_extensions import Protocol, TypeGuard, runtime_checkable
+from typing_extensions import TypeGuard
 
 __all__ = (
     # named
