@@ -64,10 +64,10 @@ def test_get_module() -> None:
     assert get_module(int) == BUILTINS
 
     with pytest.raises(AttributeError):
-        get_module(69)  # type: ignore
+        get_module(69)
 
     with pytest.raises(AttributeError):
-        get_module(named)  # type: ignore
+        get_module(named)
 
     assert get_module(get_module) == NAMED_CORE
 
