@@ -23,7 +23,7 @@ __url__ = "https://github.com/nekitdev/named"
 __title__ = "named"
 __author__ = "nekitdev"
 __license__ = "MIT"
-__version__ = "1.4.0"
+__version__ = "1.4.1"
 
 from named.core import (
     MODULE,
