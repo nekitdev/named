@@ -1,7 +1,7 @@
 from builtins import hasattr as has_attribute
 from typing import Any, Protocol, runtime_checkable
 
-from typing_extensions import TypeGuard
+from typing_extensions import TypeIs
 
 __all__ = (
     # named
@@ -37,7 +37,7 @@ class Named(Protocol):
 
 
 def get_name(item: Named) -> str:
-    """Fetches the `__name__` of the [`Named`][named.typing.Named] `item`.
+    """Fetches the `__name__` of the [`Named`][named.core.Named] `item`.
 
     Arguments:
         item: The item to fetch the name of.
@@ -49,7 +49,7 @@ def get_name(item: Named) -> str:
 
 
 def set_name(item: Named, name: str) -> None:
-    """Sets the `__name__` of the [`Named`][named.typing.Named] `item`.
+    """Sets the `__name__` of the [`Named`][named.core.Named] `item`.
 
     Arguments:
         item: The item to set the name of.
@@ -80,20 +80,20 @@ def set_type_name(item: Any, name: str) -> None:
     set_name(type(item), name)  # type: ignore
 
 
-def is_named(item: Any) -> TypeGuard[Named]:
-    """Checks if the `item` implements the [`Named`][named.typing.Named] protocol.
+def is_named(item: Any) -> TypeIs[Named]:
+    """Checks if the `item` implements the [`Named`][named.core.Named] protocol.
 
     Arguments:
         item: The item to check.
 
     Returns:
-        Whether the item implements the [`Named`][named.typing.Named] protocol.
+        Whether the item implements the [`Named`][named.core.Named] protocol.
     """
     return has_attribute(item, NAME)
 
 
 has_name = is_named
-"""An alias of [`is_named`][named.typing.is_named]."""
+"""An alias of [`is_named`][named.core.is_named]."""
 
 
 MODULE = "__module__"
@@ -108,7 +108,7 @@ class Moduled(Protocol):
 
 
 def get_module(item: Moduled) -> str:
-    """Fetches the `__module__` of the [`Moduled`][named.typing.Moduled] `item`.
+    """Fetches the `__module__` of the [`Moduled`][named.core.Moduled] `item`.
 
     Arguments:
         item: The item to fetch the module of.
@@ -120,7 +120,7 @@ def get_module(item: Moduled) -> str:
 
 
 def set_module(item: Moduled, module: str) -> None:
-    """Sets the `__module__` of the [`Moduled`][named.typing.Moduled] `item`.
+    """Sets the `__module__` of the [`Moduled`][named.core.Moduled] `item`.
 
     Arguments:
         item: The item to set the module of.
@@ -151,17 +151,17 @@ def set_type_module(item: Any, module: str) -> None:
     set_module(type(item), module)  # type: ignore
 
 
-def is_moduled(item: Any) -> TypeGuard[Moduled]:
-    """Checks if the `item` implements the [`Moduled`][named.typing.Moduled] protocol.
+def is_moduled(item: Any) -> TypeIs[Moduled]:
+    """Checks if the `item` implements the [`Moduled`][named.core.Moduled] protocol.
 
     Arguments:
         item: The item to check.
 
     Returns:
-        Whether the item implements the [`Moduled`][named.typing.Moduled] protocol.
+        Whether the item implements the [`Moduled`][named.core.Moduled] protocol.
     """
     return has_attribute(item, MODULE)
 
 
 has_module = is_moduled
-"""An alias of [`is_moduled`][named.typing.is_moduled]."""
+"""An alias of [`is_moduled`][named.core.is_moduled]."""
