@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reference" class="md-skip">
+        <a href="#named" class="md-skip">
           Skip to content
         </a>
       
@@ -283,8 +283,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -312,8 +310,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -580,8 +576,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -760,8 +754,7 @@
   
 
 
-<h1 id="reference">Reference</h1>
-
+  <h1>Reference</h1>
 
 <div class="doc doc-object doc-module">
 
@@ -771,17 +764,52 @@
   <div class="doc doc-contents first">
   
       <p>Named types.</p>
-<p>This library defines the [<code>Named</code>][named.typing.Named] protocol for types
+<p>This library defines the <a class="autorefs autorefs-internal" href="#named.Named"><code>Named</code></a> protocol for types
 that contain the <code>__name__</code> attribute, abstracting the attribute itself away.</p>
-<p>It also provides the [<code>get_name</code>][named.typing.get_name] function to fetch
-the name of the item provided, along with [<code>get_type_name</code>][named.typing.get_type_name], such that</p>
+<p>It also provides the <a class="autorefs autorefs-internal" href="#named.get_name"><code>get_name</code></a> function to fetch
+the name of the item provided, along with <a class="autorefs autorefs-internal" href="#named.get_type_name"><code>get_type_name</code></a>, such that</p>
 <div class="highlight"><pre><span></span><code><span class="n">get_type_item</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="c1"># is equivalent to</span>
 <span class="n">get_name</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
 </code></pre></div>
-<p>Lastly, there is the type guard function called [<code>is_named</code>][named.typing.is_named], which checks
-for the presence of <code>__name__</code> attribute
-(which is exported in the [<code>NAME</code>][named.typing.NAME] constant).</p>
+<p>Lastly, there is the type guard function called <a class="autorefs autorefs-internal" href="#named.is_named"><code>is_named</code></a>
+(aliased as <a class="autorefs autorefs-internal" href="#named.has_name"><code>has_name</code></a>), which checks for the presence
+of <code>__name__</code> attribute (which is exported in the <a class="autorefs autorefs-internal" href="#named.NAME"><code>NAME</code></a> constant).</p>
+<p>This library also provides the functionality for accessing and manipulating module names:</p>
+<table>
+<thead>
+<tr>
+<th><code>__name__</code></th>
+<th><code>__module__</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="autorefs autorefs-internal" href="#named.Named"><code>Named</code></a></td>
+<td><a class="autorefs autorefs-internal" href="#named.Moduled"><code>Moduled</code></a></td>
+</tr>
+<tr>
+<td><a class="autorefs autorefs-internal" href="#named.get_name"><code>get_name</code></a></td>
+<td><a class="autorefs autorefs-internal" href="#named.get_module"><code>get_module</code></a></td>
+</tr>
+<tr>
+<td><a class="autorefs autorefs-internal" href="#named.get_type_name"><code>get_type_name</code></a></td>
+<td><a class="autorefs autorefs-internal" href="#named.get_type_module"><code>get_type_module</code></a></td>
+</tr>
+<tr>
+<td><a class="autorefs autorefs-internal" href="#named.is_named"><code>is_named</code></a></td>
+<td><a class="autorefs autorefs-internal" href="#named.is_moduled"><code>is_moduled</code></a></td>
+</tr>
+<tr>
+<td><a class="autorefs autorefs-internal" href="#named.has_name"><code>has_name</code></a></td>
+<td><a class="autorefs autorefs-internal" href="#named.has_module"><code>has_module</code></a></td>
+</tr>
+<tr>
+<td><a class="autorefs autorefs-internal" href="#named.NAME"><code>NAME</code></a></td>
+<td><a class="autorefs autorefs-internal" href="#named.MODULE"><code>MODULE</code></a></td>
+</tr>
+</tbody>
+</table>
 
   
 
@@ -851,7 +879,7 @@ for the presence of <code>__name__</code> attribute
 
   <div class="doc doc-contents ">
   
-      <p>An alias of [<code>is_moduled</code>][named.typing.is_moduled].</p>
+      <p>An alias of <a class="autorefs autorefs-internal" href="#named.is_moduled"><code>is_moduled</code></a>.</p>
   </div>
 
 </div>
@@ -872,7 +900,7 @@ for the presence of <code>__name__</code> attribute
 
   <div class="doc doc-contents ">
   
-      <p>An alias of [<code>is_named</code>][named.typing.is_named].</p>
+      <p>An alias of <a class="autorefs autorefs-internal" href="#named.is_named"><code>is_named</code></a>.</p>
   </div>
 
 </div>
@@ -998,7 +1026,7 @@ for the presence of <code>__name__</code> attribute
 
   <div class="doc doc-contents ">
   
-      <p>Fetches the <code>__module__</code> of the [<code>Moduled</code>][named.typing.Moduled] <code>item</code>.</p>
+      <p>Fetches the <code>__module__</code> of the <a class="autorefs autorefs-internal" href="#named.Moduled"><code>Moduled</code></a> <code>item</code>.</p>
 
 
 
@@ -1066,7 +1094,7 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_module</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Moduled</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetches the `__module__` of the [`Moduled`][named.typing.Moduled] `item`.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetches the `__module__` of the [`Moduled`][named.core.Moduled] `item`.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        item: The item to fetch the module of.</span>
@@ -1094,7 +1122,7 @@ for the presence of <code>__name__</code> attribute
 
   <div class="doc doc-contents ">
   
-      <p>Fetches the <code>__name__</code> of the [<code>Named</code>][named.typing.Named] <code>item</code>.</p>
+      <p>Fetches the <code>__name__</code> of the <a class="autorefs autorefs-internal" href="#named.Named"><code>Named</code></a> <code>item</code>.</p>
 
 
 
@@ -1162,7 +1190,7 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Named</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetches the `__name__` of the [`Named`][named.typing.Named] `item`.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetches the `__name__` of the [`Named`][named.core.Named] `item`.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        item: The item to fetch the name of.</span>
@@ -1375,14 +1403,14 @@ for the presence of <code>__name__</code> attribute
 
 
 <h2 id="named.is_moduled" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">is_moduled</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TypeGuard</span><span class="p">[</span><span class="n">Moduled</span><span class="p">]</span></code>
+          <code class="highlight language-python"><span class="n">is_moduled</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TypeIs</span><span class="p">[</span><span class="n">Moduled</span><span class="p">]</span></code>
 
 </h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>Checks if the <code>item</code> implements the [<code>Moduled</code>][named.typing.Moduled] protocol.</p>
+      <p>Checks if the <code>item</code> implements the <a class="autorefs autorefs-internal" href="#named.Moduled"><code>Moduled</code></a> protocol.</p>
 
 
 
@@ -1427,11 +1455,11 @@ for the presence of <code>__name__</code> attribute
     <tbody>
         <tr>
           <td>
-                <code><span title="typing_extensions.TypeGuard">TypeGuard</span>[<a class="autorefs autorefs-internal" title="named.core.Moduled" href="#named.Moduled">Moduled</a>]</code>
+                <code><span title="typing_extensions.TypeIs">TypeIs</span>[<a class="autorefs autorefs-internal" title="named.core.Moduled" href="#named.Moduled">Moduled</a>]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Whether the item implements the [<code>Moduled</code>][named.typing.Moduled] protocol.</p>
+              <p>Whether the item implements the <a class="autorefs autorefs-internal" href="#named.Moduled"><code>Moduled</code></a> protocol.</p>
             </div>
           </td>
         </tr>
@@ -1449,14 +1477,14 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">160</span>
 <span class="normal">161</span>
 <span class="normal">162</span>
-<span class="normal">163</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_moduled</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TypeGuard</span><span class="p">[</span><span class="n">Moduled</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if the `item` implements the [`Moduled`][named.typing.Moduled] protocol.</span>
+<span class="normal">163</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_moduled</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TypeIs</span><span class="p">[</span><span class="n">Moduled</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if the `item` implements the [`Moduled`][named.core.Moduled] protocol.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        item: The item to check.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        Whether the item implements the [`Moduled`][named.typing.Moduled] protocol.</span>
+<span class="sd">        Whether the item implements the [`Moduled`][named.core.Moduled] protocol.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">has_attribute</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">MODULE</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -1471,14 +1499,14 @@ for the presence of <code>__name__</code> attribute
 
 
 <h2 id="named.is_named" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">is_named</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TypeGuard</span><span class="p">[</span><span class="n">Named</span><span class="p">]</span></code>
+          <code class="highlight language-python"><span class="n">is_named</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TypeIs</span><span class="p">[</span><span class="n">Named</span><span class="p">]</span></code>
 
 </h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>Checks if the <code>item</code> implements the [<code>Named</code>][named.typing.Named] protocol.</p>
+      <p>Checks if the <code>item</code> implements the <a class="autorefs autorefs-internal" href="#named.Named"><code>Named</code></a> protocol.</p>
 
 
 
@@ -1523,11 +1551,11 @@ for the presence of <code>__name__</code> attribute
     <tbody>
         <tr>
           <td>
-                <code><span title="typing_extensions.TypeGuard">TypeGuard</span>[<a class="autorefs autorefs-internal" title="named.core.Named" href="#named.Named">Named</a>]</code>
+                <code><span title="typing_extensions.TypeIs">TypeIs</span>[<a class="autorefs autorefs-internal" title="named.core.Named" href="#named.Named">Named</a>]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Whether the item implements the [<code>Named</code>][named.typing.Named] protocol.</p>
+              <p>Whether the item implements the <a class="autorefs autorefs-internal" href="#named.Named"><code>Named</code></a> protocol.</p>
             </div>
           </td>
         </tr>
@@ -1545,14 +1573,14 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">89</span>
 <span class="normal">90</span>
 <span class="normal">91</span>
-<span class="normal">92</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_named</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TypeGuard</span><span class="p">[</span><span class="n">Named</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if the `item` implements the [`Named`][named.typing.Named] protocol.</span>
+<span class="normal">92</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">is_named</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TypeIs</span><span class="p">[</span><span class="n">Named</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if the `item` implements the [`Named`][named.core.Named] protocol.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        item: The item to check.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        Whether the item implements the [`Named`][named.typing.Named] protocol.</span>
+<span class="sd">        Whether the item implements the [`Named`][named.core.Named] protocol.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">has_attribute</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">NAME</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -1574,7 +1602,7 @@ for the presence of <code>__name__</code> attribute
 
   <div class="doc doc-contents ">
   
-      <p>Sets the <code>__module__</code> of the [<code>Moduled</code>][named.typing.Moduled] <code>item</code>.</p>
+      <p>Sets the <code>__module__</code> of the <a class="autorefs autorefs-internal" href="#named.Moduled"><code>Moduled</code></a> <code>item</code>.</p>
 
 
 
@@ -1630,7 +1658,7 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">127</span>
 <span class="normal">128</span>
 <span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_module</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Moduled</span><span class="p">,</span> <span class="n">module</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the `__module__` of the [`Moduled`][named.typing.Moduled] `item`.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the `__module__` of the [`Moduled`][named.core.Moduled] `item`.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        item: The item to set the module of.</span>
@@ -1656,7 +1684,7 @@ for the presence of <code>__name__</code> attribute
 
   <div class="doc doc-contents ">
   
-      <p>Sets the <code>__name__</code> of the [<code>Named</code>][named.typing.Named] <code>item</code>.</p>
+      <p>Sets the <code>__name__</code> of the <a class="autorefs autorefs-internal" href="#named.Named"><code>Named</code></a> <code>item</code>.</p>
 
 
 
@@ -1712,7 +1740,7 @@ for the presence of <code>__name__</code> attribute
 <span class="normal">56</span>
 <span class="normal">57</span>
 <span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Named</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the `__name__` of the [`Named`][named.typing.Named] `item`.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the `__name__` of the [`Named`][named.core.Named] `item`.</span>
 
 <span class="sd">    Arguments:</span>
 <span class="sd">        item: The item to set the name of.</span>
@@ -1945,7 +1973,7 @@ for the presence of <code>__name__</code> attribute
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>
